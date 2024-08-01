@@ -1,0 +1,44 @@
+#creating a file in the format of txt
+with open("d:/235n1f0061/test.txt",'w') as f:
+	f.write("my name is Manojkumar \n")
+	f.write("my Hall Ticket No is 235N1F0061 \n")
+	f.write("i am pursing Master of computer @ Applications #")
+	f.close()
+
+
+V=['a','e','i','o','u','A','E','I','O','U']
+S=['@','.',',',':',';','#']
+vowel,uc,lc,lines,blank,words,num,con,spl=0,0,0,0,0,0,0,0,0
+with open("D:/235n1f0061/test.txt",'r') as f:
+	for line in f:
+		lines+=1
+		for x in line:
+			if x==" " or x=="\n":
+				words+=1
+		print(line)
+		for ch in line:
+			if(str.isnumeric(ch)):
+				num+=1
+			elif(ch==" "):
+				blank+=1
+			elif(ch>="a" and ch<="z")or(ch>="A" and ch<="Z"):
+				if(ch in V):
+					vowel+=1
+				else:
+					con+=1
+				if(str.isupper(ch)):
+					uc+=1
+				else:
+					lc+=1
+			elif(ch in S):
+				spl+=1
+print("\n")
+print(f"Number of blank spaces:{blank}")
+print(f"Number of vowels:{vowel}")
+print(f"Number of uppercases:{uc}")
+print(f"Number of lowercases:{lc}")
+print(f"spl char:{spl}")			
+print(f"conseonents in file:{con}")
+print(f"Number of words:{words}")
+print(f"Number of numericals:{num}")
+print(f" total number of characters in file is:{uc+lc+blank+num+spl}")		
